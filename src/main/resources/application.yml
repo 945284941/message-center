@@ -1,0 +1,67 @@
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+spring:
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6397
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: 5000
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+    publisher-returns: true
+    # 连接超时 毫秒
+    connection-timeout: 60000
+    # 监听器
+    listener:
+      simple:
+        acknowledge-mode: manual
+        # 最小并发量
+        concurrency: 100
+        # 最大并发量
+        max-concurrency: 1000
+        prefetch: 50
+        retry:
+          # 重试是否可用
+          enabled: true
+      direct:
+        acknowledge-mode: manual
+
+
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+     url: jdbc:mysql://116.63.152.101:3306/gz?serverTimezone=UTC&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8
+     username: root
+     password: 123456
+#    url: jdbc:mysql://rm-m5e76b4361kqzf463.mysql.rds.aliyuncs.com:3306/hyjy?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8
+#    username: hyjy
+#    password: Nana880813
+  profiles:
+    active: dev
+
+

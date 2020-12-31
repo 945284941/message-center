@@ -1,0 +1,7 @@
+server:
+  port: 8081
+wx_appid: wx42176033fa205e50
+wx_appsecret: 4fd2461521f23934b9fdcf9cb2af048a
+wx_applets_appid: wx42176033fa205e50
+wx_applets_appsecret: 4fd2461521f23934b9fdcf9cb2af048a
+exchange: jiaohuanji

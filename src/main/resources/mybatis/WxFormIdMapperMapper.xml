@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.formId.mapper.WxFormIdMapper">
+    <sql id="Base_Column_List" >
+        id, form_id, start_time, end_time,
+        create_time,del_flag,open_id
+    </sql>
+    <!--列-->
+
+  <select id="selectListByNew" parameterType="com.example.demo.formId.domain.WxFormId" resultType="com.example.demo.formId.domain.WxFormId">
+
+      select <include refid="Base_Column_List"></include>  from wx_formid
+
+      <where>
+          <if test="openId != null and openId != ''">
+              and  open_id = #{openId}
+          </if>
+          <if test="delFlag != null and delFlag != ''">
+              AND del_flag = #{delFlag}
+          </if>
+          <if test="formTime != null ">
+              AND end_time &gt;= #{formTime}
+          </if>
+      </where>
+
+  </select>
+
+
+</mapper>
