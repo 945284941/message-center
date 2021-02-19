@@ -2,7 +2,7 @@ package com.example.demo.util;
 
 public enum resultEum {
 
-    SUCCESS("操作成功")，
+    SUCCESS("操作成功"),
     ERROR("操作失败");
 
 

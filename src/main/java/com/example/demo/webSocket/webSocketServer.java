@@ -1,6 +1,6 @@
 package com.example.demo.webSocket;
 
-import com.example.demo.message.controller.SendMessageController;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

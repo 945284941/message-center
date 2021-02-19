@@ -7,9 +7,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class MyConfig implements WebMvcConfigurer {
-     public void addInterceptors(InterceptorRegistry registry){
-         registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/message/**");
-     }
+//     public void addInterceptors(InterceptorRegistry registry){
+//         registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/message/**");
+//     }
 
 
 }
